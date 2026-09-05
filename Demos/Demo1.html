@@ -1,0 +1,433 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Android Launcher</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#111;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.phone{
+width:360px;
+height:720px;
+border-radius:35px;
+overflow:hidden;
+position:relative;
+background:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200");
+background-size:cover;
+background-position:center;
+box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+
+#lockScreen{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(8px);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+z-index:999;
+}
+
+#lockTime{
+font-size:60px;
+font-weight:bold;
+}
+
+.unlockBtn{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+}
+
+.statusBar{
+display:flex;
+justify-content:space-between;
+padding:10px 15px;
+color:white;
+font-weight:bold;
+}
+
+.search{
+padding:10px;
+}
+
+.search input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:25px;
+outline:none;
+}
+
+.apps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:20px;
+}
+
+.app{
+text-align:center;
+color:white;
+cursor:pointer;
+}
+
+.icon{
+width:60px;
+height:60px;
+border-radius:18px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+margin:auto;
+}
+
+.app p{
+margin-top:5px;
+font-size:12px;
+}
+
+.dock{
+position:absolute;
+bottom:10px;
+left:10px;
+right:10px;
+height:70px;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+border-radius:25px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+font-size:30px;
+color:white;
+}
+
+.appWindow{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:none;
+z-index:100;
+animation:openApp .3s;
+}
+
+@keyframes openApp{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.topBar{
+background:#2196f3;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+}
+
+.backBtn{
+padding:8px 15px;
+margin:10px;
+cursor:pointer;
+}
+
+.content{
+padding:20px;
+}
+
+.dark{
+background:black;
+color:white;
+}
+
+.calcInput{
+width:100%;
+height:60px;
+font-size:30px;
+text-align:right;
+padding:10px;
+margin-bottom:10px;
+}
+
+.calc button{
+width:23%;
+height:55px;
+margin:2px;
+font-size:20px;
+}
+
+#notification{
+position:absolute;
+top:-300px;
+left:0;
+right:0;
+height:250px;
+background:rgba(0,0,0,.8);
+color:white;
+padding:20px;
+transition:.4s;
+z-index:500;
+}
+
+.showNotification{
+top:0 !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+<div id="notification">
+<h3>Notifications</h3>
+<hr>
+<p>📧 New Gmail Message</p>
+<p>▶️ New YouTube Video</p>
+<p>💬 WhatsApp Message</p>
+</div>
+
+<div id="lockScreen">
+<div id="lockTime"></div>
+<button class="unlockBtn" onclick="unlock()">Unlock</button>
+</div>
+
+<div class="statusBar">
+<span id="time"></span>
+<span>📶 🔋100%</span>
+</div>
+
+<div class="search">
+<input placeholder="Search Google">
+</div>
+
+<div class="apps">
+
+<div class="app" onclick="openApp('chrome')">
+<div class="icon">🌐</div>
+<p>Chrome</p>
+</div>
+
+<div class="app" onclick="openApp('youtube')">
+<div class="icon">▶️</div>
+<p>YouTube</p>
+</div>
+
+<div class="app" onclick="openApp('calculator')">
+<div class="icon">🧮</div>
+<p>Calculator</p>
+</div>
+
+<div class="app" onclick="openApp('settings')">
+<div class="icon">⚙️</div>
+<p>Settings</p>
+</div>
+
+<div class="app" onclick="toggleNotification()">
+<div class="icon">🔔</div>
+<p>Notifications</p>
+</div>
+
+</div>
+
+<div class="dock">
+📞 💬 📷 🌍
+</div>
+
+<!-- Chrome -->
+<div class="appWindow" id="chrome">
+<div class="topBar">
+Chrome
+</div>
+
+<button class="backBtn" onclick="closeApp('chrome')">⬅ Back</button>
+
+<div class="content">
+<h2>Google Search</h2>
+<br>
+<input id="searchText" placeholder="Search..." style="width:100%;padding:10px;">
+<br><br>
+<button onclick="googleSearch()">Search</button>
+</div>
+</div>
+
+<!-- YouTube -->
+<div class="appWindow" id="youtube">
+<div class="topBar">
+YouTube
+</div>
+
+<button class="backBtn" onclick="closeApp('youtube')">⬅ Back</button>
+
+<div class="content">
+<h2>YouTube</h2>
+<br>
+<button onclick="window.open('https://www.youtube.com')">
+Open YouTube
+</button>
+</div>
+</div>
+
+<!-- Calculator -->
+<div class="appWindow" id="calculator">
+
+<div class="topBar">
+Calculator
+</div>
+
+<button class="backBtn" onclick="closeApp('calculator')">⬅ Back</button>
+
+<div class="content calc">
+
+<input id="display" class="calcInput" readonly>
+
+<button onclick="add('7')">7</button>
+<button onclick="add('8')">8</button>
+<button onclick="add('9')">9</button>
+<button onclick="add('/')">/</button>
+
+<button onclick="add('4')">4</button>
+<button onclick="add('5')">5</button>
+<button onclick="add('6')">6</button>
+<button onclick="add('*')">*</button>
+
+<button onclick="add('1')">1</button>
+<button onclick="add('2')">2</button>
+<button onclick="add('3')">3</button>
+<button onclick="add('-')">-</button>
+
+<button onclick="add('0')">0</button>
+<button onclick="calculate()">=</button>
+<button onclick="clearDisplay()">C</button>
+<button onclick="add('+')">+</button>
+
+</div>
+</div>
+
+<!-- Settings -->
+<div class="appWindow" id="settings">
+
+<div class="topBar">
+Settings
+</div>
+
+<button class="backBtn" onclick="closeApp('settings')">⬅ Back</button>
+
+<div class="content">
+
+<h3>Theme</h3>
+<br>
+
+<button onclick="toggleDarkMode()">
+Dark Mode
+</button>
+
+<br><br>
+
+<h3>About Phone</h3>
+
+<p>Android Launcher v1.0</p>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function unlock(){
+document.getElementById("lockScreen").style.display="none";
+}
+
+function openApp(id){
+document.getElementById(id).style.display="block";
+}
+
+function closeApp(id){
+document.getElementById(id).style.display="none";
+}
+
+function add(v){
+display.value += v;
+}
+
+function calculate(){
+try{
+display.value=eval(display.value);
+}
+catch{
+display.value="Error";
+}
+}
+
+function clearDisplay(){
+display.value="";
+}
+
+function googleSearch(){
+let q=document.getElementById("searchText").value;
+window.open(
+"https://www.google.com/search?q="+q,
+"_blank"
+);
+}
+
+function toggleDarkMode(){
+document.body.classList.toggle("dark");
+}
+
+function toggleNotification(){
+document
+.getElementById("notification")
+.classList.toggle("showNotification");
+}
+
+setInterval(()=>{
+let now=new Date();
+
+document.getElementById("time").innerHTML=
+now.toLocaleTimeString();
+
+document.getElementById("lockTime").innerHTML=
+now.toLocaleTimeString();
+},1000);
+
+</script>
+
+</body>
+</html>
+```

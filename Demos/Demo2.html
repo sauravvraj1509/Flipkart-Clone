@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     /* .CLASS-BUTTON{
+        color: RED;
+    }
+    .add-to-bag{
+        border-radius: 1rem;
+        background-color: aquamarine; */
+        /* font-size: medium; */
+        /* border: none; */
+        /* padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        */
+        /* padding: 5px 15px;
+    }
+    .Wishlist{ */
+        /* border-radius: 5px; */
+        /* font-size: medium; */
+        /* padding-left: 20px;
+        padding-right: 25px;
+        padding-top: 5px;
+        padding-bottom: 5px; */
+        /* padding: 5px 35px;
+        border: 2px solid black ;
+
+    }  */
+
+      #box{
+        height: 200px;
+        width: 200px;
+        border: none;
+        background-color: black;
+      }
+      #box:hover{
+         rotate: 60deg;
+        background-color: rgb(13, 81, 81);
+        width: 200px;
+        height: 200px;
+        border-radius: 40%;
+       
+      }
+      
+      
+
+</style>
+<body>
+    <div id="box">
+
+    </div>
+   
+    <h1 id="cost"></h1>
+    <h2 id="fabricname1"></h2>
+
+    <!-- <input type="password" placeholder="Password" id="pwd"/>
+    <input type="checkbox" onClick="pwd.type = this.checked ? 'text' : 'password'"/>
+
+    -->
+    <!-- <h1>saurav</h1>
+    <h2>saurav</h2>
+    <h3>saurav</h3>
+    <h4>saurav</h4>
+    <h5>saurav</h5>
+    <h6>saurav</h6>
+    <ul type="square">
+        <li>saurav</li>
+    </ul>
+    <BUtton class="CLASS-BUTTON">CLICK</BUtton>
+    <button id="ID-BUTTON">BY-ID</button>
+    <button class="CLASS-BUTTON">BY-CLASS</button>
+    <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, magni!</P>
+
+    <button class="click-me" onclick="alert('Dangerous')">click me</button>
+    <br>
+    <button class="add-to-bag" onclick="alert('item has been added to cart ')">Add to Bag</button>
+    <button class="Wishlist" onclick="alert('item has been added to wishlist')">❤️Wishlist</button>
+
+    <h1 id="myName"></h1>
+
+    <input type="text" id="count-vowel">
+    <button onclick="showcount()">submit</button> 
+  -->
+
+    
+    
+
+    <script>
+    //     console.log('Hello Bacchon');
+    //     console.log("hello" + ' '+ "Bacchon");
+    //     console.log(3+3);
+    //     console.warn('this is warning');
+    //     console.error('this is an error:')
+
+
+    //     let a = 5;
+    //     let b= 5;
+    //     console.log(a+b);
+
+    //     let c = 'Saurav';
+    //     let d = ' ';
+    //     let e = 'Raj';
+    //     console.log(c+d+e);
+
+
+    //     let f = (700 + (41/100 * 700)) + 25 + 20
+    //     console.log(f)
+
+    //     let g = `this is total cost ${(700 + (41/100 * 700)) + 25 + 20}`
+    //     console.log(g)
+
+    //     let h = 1;
+    //     h +=10;
+    //     console.log(h)
+    //     h -=2;
+    //     console.log(h)
+    //      h *=4;
+    //     console.log(h)
+    //      h /=2;
+    //     console.log(h)
+    //      h ++;
+    //     console.log(h)
+
+    //     const myName = 'Saurav Raj';
+    //     document.querySelector('#myName').innerText = myName;
+
+    //     console.log(eval('2+3+4+8*9'));
+    //     console.log(eval('2+3+4+8*11.5'));
+
+
+    //     let str = "hello";
+    //     let reversed = "";
+
+    //     for (let i = str.length - 1; i >= 0; i--) {
+    //     reversed += str[i]; 
+    //     }
+
+    //     console.log("Original String:", str);
+    //     console.log("Reversed String:", reversed);
+        
+        
+    //     function sum(a ,b){
+    //         let s = a+b;
+    //         return s;
+
+    //     }
+    //     let num = sum(4,5);
+    //     console.log(num)
+        
+    //     //calculate ferhenhite
+    //     function ferhenhite(CelciusValue){
+    //         return 9/5 * CelciusValue +32;
+    //     }
+    //    let CelciusValue = ferhenhite(100);
+    //     console.log(CelciusValue);
+
+    //     console.log(ferhenhite(80));
+
+    //     //find largest number
+    //     function largernumber(num1, num2){
+    //         if(num1 > num2){
+    //             return num1;
+    //         }else{
+    //             return num2;
+    //         }
+
+    //         // return num1 > num2 ? num1 : num2
+    //     }
+
+    //     let s =  largernumber(20, 40);
+    //     console.log(s);
+    //      s =  largernumber(60, 40);
+    //     console.log(s);
+    //     console.log(largernumber(70, 60));
+
+
+    //     //reverse string
+    //     let str1 = `saurav raj`;
+    //     let reversed1 = '';
+
+    //     for(let j = str1.length - 1; j>=0; j--){
+    //     reversed1 += str1[j];
+    //     }
+
+    //     console.log(`original string ${str1}`);
+    //     console.log(`reversed string ${reversed1}`)
+
+
+    //     //count vowel
+    //     function countvowel(str2){
+    //         let count = '';
+    //         for(let k = 0; k < str2.length; k++)
+    //     {
+    //        let H = str2[k]
+    //                if(H ===  'a' ||H ===  'e' ||H ===  'i' ||H ===  'o' ||H ===  'u' ||
+    //        H ===  'A' ||H ===  'E' ||H ===  'I' ||H ===  'O' ||H ===  'U' 
+    //     )
+    //     {
+    //         count++;
+    //     }
+    //     }
+    //     return count;
+    //     }
+
+    //     function showcount(){
+    //         let inputtext = document.getElementById('count-vowel').value;
+    //         let result = countvowel(inputtext);
+    //         console.log(result);
+    //     }
+    
+
+    //    function product(price, fabricname){
+    //     document.querySelector('#cost').innerHTML = price;
+    //     document.querySelector('#fabricname1').innerHTML = fabricname;
+    //    };
+    //    product(621, 'cotton');
+       
+    //    function product1(){
+    //     console.log("6");console.log(631);
+    //    }
+
+    //    let shirt =
+    //    {
+    //     price : 499,
+    //     fabric: 'cotton',
+    //     Brand_name : 'polo',
+    //    }
+    //    console.log(shirt)
+    //    console.log(shirt['fabric'])
+
+
+    //    console.log(shirt.price);
+    //    console.log(shirt.fabric);
+    //    shirt.price = 599;
+
+    //    console.log(shirt.price);
+    //    console.log(shirt)
+    //    delete shirt.price;
+
+
+    // let product = {
+    //     company : 'mango',
+    //     price : 861,
+    //     'item-name': 'T-Shirt',
+    //     displayprice : function (){
+    //         console.log(`price of the product  ₹${product.price}`);
+    //     }
+
+    // };
+    // product.displayprice();
+
+    // for(let i = 0; i <=10; i++){
+    //   console.log(Math.random()*10); 
+    //   }
+
+
+    //   console.log('this is my PC'.toUpperCase())
+    //   console.log('this is my PC'.length)
+    //   console.log('this is my PC'.replace('PC', 'Personal computer'))
+
+    // let a = 5;
+    // let b = a;
+
+    // console.log(`a=${a}, b=${b}`);
+    // a = 8;
+
+    // console.log(`a=${a}, b=${b}`);
+
+    // let x = {
+    //     num:5
+    // }
+    // let y = x;
+
+    // console.log(`x=${x.num}, y=${y.num}`);
+
+    // x.num = 6;
+    // console.log(`x=${x.num}, y=${y.num}`);
+
+
+    
+    // let name = "saurav";
+    // let reverse = '';
+    // for(let i =name.length - 1;i>=0;i--){
+
+    //     reverse += name[i];
+    // }
+    //     console.log(reverse)
+
+    // let arr = [100,200,500,300,400,700];
+
+    // console.log(arr)
+    // arr.push(800)
+    // console.log(arr)
+    // arr.unshift(1000)
+    // console.log(arr)
+    // arr.sort((a,b)=>a-b)
+    // console.log(arr)
+    // arr.sort((a,b)=>b-a)
+    // console.log(arr)
+    // arr.splice(2,1,'saurav')
+    // console.log(arr)
+    // arr.pop()
+    // console.log(arr)
+    // arr.shift()
+    // console.log(arr)
+    
+    // let nums='';
+    // let newarr = [...nums]
+
+    // newarr[0] = 'saurav'
+    // newarr[1] = 200
+    // newarr[2] = 300
+    // newarr[3] = 400
+    // newarr[4] = 500
+    
+    // console.log(newarr)
+
+    // newarr.push(900)
+    // console.log(newarr)
+    // newarr.reverse()
+    // console.log(newarr)
+    // newarr.sort((a,b)=>a-b)
+    // console.log(newarr)
+    // newarr.sort((a,b)=>b-a)
+    
+
+
+
+
+
+    
+       
+
+
+
+   
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apna Education Consultancy</title>
+<link rel="stylesheet" href="ApnaEducation.css">
+
+</head>
+<body>
+
+<header>
+  <div class="topbar"></div>
+  <div class="nav-wrap">
+    <a href="#" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 44 L8 20 L20 14 L20 38 Z" fill="#17408b"/>
+          <path d="M56 44 L56 20 L44 14 L44 38 Z" fill="#17408b"/>
+          <path d="M32 10 L54 20 L32 30 L10 20 Z" fill="#d9a441"/>
+          <circle cx="32" cy="34" r="12" fill="#17408b"/>
+          <path d="M32 22 C40 22 46 28 46 34 C46 40 40 46 32 46" stroke="#d9a441" stroke-width="2" fill="none"/>
+          <path d="M46 12 L50 8 M50 8 L48 8 M50 8 L50 10" stroke="#d9a441" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">
+        <div class="line1">Apna</div>
+        <div class="line2">Education</div>
+        <span class="badge">CONSULTANCY</span>
+      </span>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Universities</a></li>
+        <li><a href="#">Colleges</a></li>
+        <li><a href="#">Study Abroad</a></li>
+        <li><a href="#">Scholarships</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="more-item" id="moreItem">
+          <button class="more-toggle" id="moreToggle">
+            More <span class="chev">&#9662;</span>
+          </button>
+          <div class="more-dropdown">
+            <a href="#">Services</a>
+            <a href="#">Career Guidance</a>
+            <a href="#">Direct Admission</a>
+            <a href="#">Success Stories</a>
+            <a href="#">Testimonials</a>
+            <a href="#">FAQ</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="right-cluster">
+      <div class="phone">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        <span>+91 73035 53098</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+      <button class="login-btn" id="loginBtn">Login</button>
+      <button class="burger">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== LOGIN OVERLAY (opens on Login click) ===== -->
+<div class="login-overlay" id="loginOverlay">
+  <button class="close-login" id="closeLogin">&times;</button>
+  <div class="login-content">
+    <div class="login-logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 44 L8 20 L20 14 L20 38 Z" fill="#17408b"/>
+          <path d="M56 44 L56 20 L44 14 L44 38 Z" fill="#17408b"/>
+          <path d="M32 10 L54 20 L32 30 L10 20 Z" fill="#d9a441"/>
+          <circle cx="32" cy="34" r="12" fill="#17408b"/>
+          <path d="M32 22 C40 22 46 28 46 34 C46 40 40 46 32 46" stroke="#d9a441" stroke-width="2" fill="none"/>
+        </svg>
+      </span>
+      <span class="logo-text">
+        <div class="line1">Apna Education</div>
+        <span class="badge">CONSULTANCY</span>
+      </span>
+    </div>
+
+    <div class="login-card">
+      <h2>Student Login</h2>
+      <p>OTP-based secure login for students</p>
+      <form id="loginForm">
+        <input type="text" id="studentName" placeholder="Your Name" required>
+        <input type="tel" id="mobileNumber" placeholder="Mobile Number" pattern="[0-9]{10}" maxlength="10" required>
+        <button type="submit" class="send-otp-btn">Send OTP</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="float-buttons">
+  <a href="#" class="fab-job" title="Careers">&#128188;</a>
+  <a href="https://wa.me/917303553098" class="fab-whatsapp" title="WhatsApp" target="_blank">&#128172;</a>
+</div>
+
+
+<div class="left-Div">
+<div class="INDIA">
+ ✨ India's #1 Admission Partner
+</div>
+</div>
+
+
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-col footer-brand">
+      <div class="brand-logo">
+        <div class="brand-icon">📈</div>
+        <div class="brand-text">
+          <span class="brand-name">Apna <span>Education</span></span>
+          <span class="brand-tag">CONSULTANCY</span>
+        </div>
+      </div>
+      <p class="footer-desc">
+        India's most trusted education admission partner. Helping students secure seats in top colleges &amp; universities since 2013.
+      </p>
+      <div class="social-row">
+        <a href="#" class="social-icon" aria-label="Facebook">🇫</a>
+        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-icon" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Universities</a></li>
+        <li><a href="#">Top Colleges</a></li>
+        <li><a href="#">Direct Admission</a></li>
+        <li><a href="#">Study Abroad</a></li>
+        <li><a href="#">Scholarships</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <a href="tel:+917303553098">+91 73035 53098</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">✉</span>
+          <a href="mailto:admin@apnaeducationconsultancy.in">admin@apnaeducationconsultancy.in</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          <span>New Delhi, India<br>Serving all states</span>
+        </div>
+      </div>
+      <a href="https://wa.me/917303553098" class="whatsapp-btn" target="_blank" rel="noopener">
+        WhatsApp Us
+      </a>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p class="newsletter-text">Get admission alerts, scholarship updates and expert tips.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Your email" required>
+        <button type="submit" class="newsletter-submit" aria-label="Subscribe">➤</button>
+      </form>
+      <p class="newsletter-msg" id="newsletterMsg"></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Apna Education Consultancy. All rights reserved. Founded by Er. Sintu Kumar.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<div class="float-buttons">
+  <a href="#" class="float-btn float-briefcase" aria-label="Careers">💼</a>
+  <a href="https://wa.me/917303553098" class="float-btn float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</div>
+
+
+
+<script src="ApnaEducation.js"></script>
+</body>
+</html>
