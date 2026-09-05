@@ -1,0 +1,132 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+html body
+{
+    width: 100%;
+    height: 100%;
+    font-family: Roboto, Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #111;
+}
+#container{
+    width: 80vw;
+    height: 100%;
+    /* margin: 0 10%; */
+    margin: 0 auto;
+   
+}
+#main-head{
+    /* display: inline-flex; */
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    background-color:#fff;
+}
+#flipkart-logo{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: 1.2vw;
+    
+}
+#flipkart-box{
+    background-color: #FFE51F;
+    width: 8.5vw;
+    height: 6vh;
+    margin: 0.8%;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center; 
+    color: #25241E;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 800;
+}
+#travel-box{
+    background-color:#F0F0F0;
+    width: 8.5vw;
+    height: 6vh;
+    margin: 0.8%;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center; 
+    color: #25241E;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 800;
+    margin-left: 8px;
+}
+#travel-box a{
+    display: flex;
+    align-items: center;
+}
+#travel-logo{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: 1.2vw;
+}
+#search-box{
+    display:flex; 
+    margin: 1%; 
+    border: 2px solid #2EA1FF;
+    border-radius: 11px;
+    width: 70%;
+}
+#search-logo{
+    background-color: #fff;
+    padding: 8px 8px 8px 12px;
+    border-radius: 10px 0 0 10px;
+}
+#search-box-input{
+    border: none; 
+    height: 47px; 
+    width: 100%; 
+    border-radius: 0 10px 10px 0;
+    outline: none;
+    font-size: 16px;  
+}
+#footer-items{
+    display: flex;
+    font-size: 14px;
+    padding-bottom: 50px; 
+}
+#footer-main{
+    padding: 20px;
+    width: 100vw;
+    background-color:#212121;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+#footer-main a{
+    color: #fff;
+    display: flex;
+    font-size: 12px;
+    margin-top: 9px;
+    font-weight: 700;
+}
+.footer-items-margin{
+    margin-left: 50px;
+}
+#footer-mail-us{
+    border-left: 1px solid grey ;
+    margin-left: 50px;
+    padding: 0 20px 20px 20px;
+}
+#footer-items p{
+    margin-top: 9px;
+}
+.footer-item-color{
+    color: grey;
+}
+#Telephone a{
+    color: blue;
+    margin-left: 5px;
+}
+
+
